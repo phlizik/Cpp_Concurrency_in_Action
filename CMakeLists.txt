@@ -20,12 +20,11 @@ endmacro(create_from_listing)
 function(has_boost_dependency num0 num1 result_bool)
 	SET(LISTING_NAME "listing_${num0}.${num1}")
 	SET(LISTING_SRC_NAME src/${LISTING_NAME}.cpp)
-	
 endfunction(has_boost_dependency)
 
 # url: https://cmake.org/cmake/help/v3.0/command/execute_process.html
 execute_process(
-	COMMAND sh list_pair_numbers_listings_with_main.sh
+	COMMAND sh SCRIPTS/list_pair_numbers_listings_with_main.sh
 	WORKING_DIRECTORY ../.
 	OUTPUT_VARIABLE output_pair_numbers
 	)
